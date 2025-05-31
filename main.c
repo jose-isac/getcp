@@ -18,7 +18,7 @@ static Display *display;
 static unsigned int mask;
 extern char *optarg;
 extern int optind;
-static Window   root;
+static Window root;
 static int root_x, root_y, win_x, win_y;
 
 /* Function definitions */
