@@ -19,7 +19,7 @@ clean:
 
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
-	cp -f getcp ${DESTDIR}${PREFIX}/bin
+	cp -f build/getcp ${DESTDIR}${PREFIX}/bin
 	chmod 755 ${DESTDIR}${PREFIX}/bin/getcp
 
 uninstall:
