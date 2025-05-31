@@ -74,21 +74,25 @@ int main(int argc, char *argv[])
 {
     setup_display(); 
     get_cursor_position();
-
+    
     while ((chr = getopt(argc, argv, "hxy")) != -1) {
         switch (chr) {
             case 'x':
                 show_x();
+                XCloseDisplay(display);
                 return EXIT_SUCCESS;
             case 'y':
                 show_y();
+                XCloseDisplay(display);
                 return EXIT_SUCCESS;
             case 'h':
                 usage();
+                XCloseDisplay(display);
                 return EXIT_SUCCESS;
             default:
                 /* Invalid option */
                 usage();
+                XCloseDisplay(display);
                 return EXIT_FAILURE;
         }
     }
