@@ -64,7 +64,10 @@ void show_y(void)
 
 void usage(void)
 {
-    fprintf(stdout, "usage: getcp [-hxy]\n");
+    fprintf(stdout, "usage: getcp\n");
+    fprintf(stdout, "       getcp -x\n");
+    fprintf(stdout, "       getcp -y\n");
+    fprintf(stdout, "       getcp -h\n");
 }
 
 int main(int argc, char *argv[])
