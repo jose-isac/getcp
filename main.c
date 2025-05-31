@@ -1,5 +1,6 @@
 #include <X11/Xlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -11,7 +12,7 @@ int main(void)
     display = XOpenDisplay(NULL);
     if (!display) {
         fprintf(stderr, "Error while opening connection to server X.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     root = DefaultRootWindow(display);
@@ -20,10 +21,10 @@ int main(void)
         fprintf(stdout, "%d,%d\n", root_x, root_y);
     } else {
         fprintf(stderr, "Error while getting cursor position.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
 
     XCloseDisplay(display);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
