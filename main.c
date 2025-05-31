@@ -1,11 +1,11 @@
-#include <X11/Xlib.h>
+#include <err.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <err.h>
 #include <unistd.h>
+#include <X11/Xlib.h>
 
 /* Function declarations */
-static void get_position(void);
+static void get_cursor_position(void);
 static void setup_display(void);
 static void show_all(void);
 static void show_x(void);
@@ -22,7 +22,7 @@ static Window   root;
 static int root_x, root_y, win_x, win_y;
 
 /* Function definitions */
-void get_position(void)
+void get_cursor_position(void)
 {
     int is_ok = XQueryPointer(
                     display,
@@ -70,7 +70,7 @@ void usage(void)
 int main(int argc, char *argv[])
 {
     setup_display(); 
-    get_position();
+    get_cursor_position();
 
     while ((chr = getopt(argc, argv, "hxy")) != -1) {
         switch (chr) {
