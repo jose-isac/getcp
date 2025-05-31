@@ -1,0 +1,45 @@
+getcp - get cursor position
+===========================
+getcp is a program that returns the current cursor position in an
+X11 graphical interface.
+
+
+Requirements
+------------
+You'll need the Xlib header files in order to build getcp.
+
+
+Installation
+------------
+Edit config.mk. The program will be installed into the
+/usr/local namespace by default.
+
+Afterwards enter the following command to build and install
+getcp(if necessary as root).
+
+	make clean install
+
+
+Running getcp
+--------------
+Make sure the place where you installed it it's in the $PATH!
+In order to get the current X,Y cursor position, run the program
+without options.
+
+	getcp
+
+If you wish only the X or Y position, add one(not both) of the
+following options: -x -y
+
+    getcp -x
+    getcp -y
+
+
+Hacking
+-------
+Take a look at the source code! Start from the main function.
+
+
+License
+-------
+See LICENSE file.
