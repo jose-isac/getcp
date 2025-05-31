@@ -1,11 +1,11 @@
 /* Author       : José Isac Araujo Monção (Rasq).
  * Objective    : Yields the current cursor position in an X11 graphical interface.
- * Usage        : See usage() or read the README file.
+ * Usage        : See usage() or read README file.
  * Created      : 05/30/25
- * Last update  : 05/31/25
+ * Last change  : 05/31/25
  * Architecture : x86_64
  * Build        : make
- * License      : See the LICENSE file.
+ * License      : See LICENSE file.
  * 
  * "Eu te amo Jesus"
  *
