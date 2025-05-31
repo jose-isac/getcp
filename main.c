@@ -1,5 +1,5 @@
 /* Author       : José Isac Araujo Monção (Rasq).
- * Objective    : Yields the current cursor position in an X11 graphical interface.
+ * Objective    : Returns the current cursor position in an X11 graphical interface.
  * Usage        : See usage() or read README file.
  * Created      : 05/30/25
  * Last change  : 05/31/25
