@@ -31,8 +31,8 @@ without options.
 If you wish only the X or Y position, add one(not both) of the
 following options: -x -y
 
-    getcp -x
-    getcp -y
+        getcp -x
+        getcp -y
 
 
 Hacking
