@@ -12,7 +12,7 @@ int main(void)
 
     display = XOpenDisplay(NULL);
     if (!display) {
-        err(EXIT_FAILURE, "Error while opening connection to server X.\n");
+        errx(EXIT_FAILURE, "Error while opening connection to server X.");
     }
 
     root = DefaultRootWindow(display);
@@ -20,7 +20,7 @@ int main(void)
     if (XQueryPointer(display, root, &root, &root, &root_x, &root_y, &win_x, &win_y, &mask)) {
         fprintf(stdout, "%d,%d\n", root_x, root_y);
     } else {
-        err(EXIT_FAILURE, "Error while getting cursor position.\n");
+        errx(EXIT_FAILURE, "Error while getting cursor position.");
     }
 
     XCloseDisplay(display);
