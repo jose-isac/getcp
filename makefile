@@ -11,7 +11,7 @@ all: getcp
 ${OBJ}:
 
 getcp: ${OBJ}
-	mkdir build
+	mkdir -p build
 	${CC} -o build/$@ ${OBJ} ${LDFLAGS}
 
 clean:
