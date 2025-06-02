@@ -44,7 +44,7 @@ static bool h_flag;
 /* Function definitions */
 void get_cursor_position(void)
 {
-    int is_ok = XQueryPointer(
+    bool is_ok = XQueryPointer(
                     display,
                     root,
                     &root,
