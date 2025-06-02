@@ -12,6 +12,7 @@
  */
 
 #include <err.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -35,6 +36,10 @@ static int root_x, root_y, win_x, win_y;
 static int opt;
 extern char *optarg;
 extern int optind;
+
+static bool x_flag;
+static bool y_flag;
+static bool h_flag;
 
 /* Function definitions */
 void get_cursor_position(void)
@@ -87,36 +92,42 @@ void usage(void)
 
 int main(int argc, char *argv[])
 {
-    setup_display(); 
-    get_cursor_position();
-    
     while ((opt = getopt(argc, argv, "hxy")) != -1) {
         switch (opt) {
             case 'x':
-                show_x();
-                XCloseDisplay(display);
-                return EXIT_SUCCESS;
+                x_flag = true;
+                break;
             case 'y':
-                show_y();
-                XCloseDisplay(display);
-                return EXIT_SUCCESS;
+                y_flag = true;
+                break;
             case 'h':
-                usage();
-                XCloseDisplay(display);
-                return EXIT_SUCCESS;
+                h_flag = true;
+                break;
+            case '?':
             default:
                 /* Invalid option */
                 usage();
-                XCloseDisplay(display);
                 return EXIT_FAILURE;
         }
     }
     argc -= optind;
     argv += optind;
-    
-    /* Default behaviour */
-    show_all();
 
+    if (h_flag) {
+        usage();
+        return EXIT_SUCCESS;
+    } 
+
+    setup_display();
+    get_cursor_position();
+
+    if (x_flag)
+        show_x();
+    else if (y_flag)
+        show_y();
+    else 
+        show_all();
+    
     XCloseDisplay(display);
     return EXIT_SUCCESS;
 }
