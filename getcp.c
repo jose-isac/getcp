@@ -26,13 +26,15 @@ static void show_y(void);
 static void usage(void);
 
 /* Variable declarations */
-static int chr;
 static Display *display;
 static unsigned int mask;
-extern char *optarg;
-extern int optind;
 static Window root;
 static int root_x, root_y, win_x, win_y;
+
+/* For option handling */
+static int opt;
+extern char *optarg;
+extern int optind;
 
 /* Function definitions */
 void get_cursor_position(void)
@@ -88,8 +90,8 @@ int main(int argc, char *argv[])
     setup_display(); 
     get_cursor_position();
     
-    while ((chr = getopt(argc, argv, "hxy")) != -1) {
-        switch (chr) {
+    while ((opt = getopt(argc, argv, "hxy")) != -1) {
+        switch (opt) {
             case 'x':
                 show_x();
                 XCloseDisplay(display);
