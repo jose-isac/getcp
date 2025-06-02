@@ -1,7 +1,7 @@
 include config.mk
 
-SRC = main.c
-OBJ = main.o
+SRC = getcp.c
+OBJ = getcp.o
 
 all: getcp
 
